@@ -1,0 +1,227 @@
+/* 공용 CSS파일 : style.css(우선) */
+/* class : . */
+/* id : # */
+/* attribute : [속성명 = ""] <- input */
+/* action : ':hover' ':focus' */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+* {
+    font-family: 'Noto Sans KR', sans-serif !important;
+}
+a, a:hover{
+    color: inherit;
+    text-decoration: unset;
+}
+
+
+/* css 우선순위 : !important */
+/* inline  / block / inline-block */
+/* inline : 본인 내용크기만큼만 영역 잡는 태그 ex) a, span, button
+    - width, height: 크키 지정 X
+    - padding : ok
+    - margin : 좌우는 ok, 위아래 X */
+/* block : 한줄을 다 영역으로 잡는 태그 ex) div, p
+    - width, height: 크키 지정 O, 나머지가 margin 처리 된다.
+    - padding : ok 
+    - margin : ok */
+/* inline-block : inline 성질 + block 성질  
+    - 본인 내용 크기만 잡고있음.
+    - widht, hegith: 지정이 가능
+    - padding, margin: 다 가능
+*/
+.flex{
+    display: flex;
+}
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+.flex-justify-space-between{
+    justify-content: space-between;
+}
+.box{
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    background-color: #7E50FF;
+}
+.bg_white{
+    background-color: #fff !important;
+}
+.bg_black{
+    background-color: #000 !important;
+}
+
+.btn.btn_default{
+    padding: 0.5rem 1rem;
+    background-color: #7E50FF;
+    border-radius: 50px;
+    color: #fff;
+    transition: 0.4s;
+}
+.btn.btn_default:hover{
+    background-color: #7E50FF;
+    color: #fff;
+    box-shadow: 1px 0 5px rgba(0,0,0,0.3);
+    transition: 0.4s;
+}
+.btn.btn_default.bg_white{
+    background-color: #fff;
+    color: #7E50FF;
+    border: 1px solid #7E50FF;
+}
+/* bootstrap 을 쓰는 이유  
+1. container
+2. modal
+*/
+.main_banner{
+    background-color: tomato;
+    height: 300px;
+}
+.sec{
+    margin-bottom: 50px;
+}
+/* form */
+.from_signup input:focus{
+    box-shadow: unset;
+    border-color: #ced4da;
+}
+
+
+/* header */
+header{
+    background: #fff !important;
+    width: 100%;
+    box-shadow: 0 0 8px rgb(255 255 255 / 5%);
+    /* border-bottom: 1px solid #e5e7eb; */
+    font-weight: 600;
+    font-size: 1.1em;
+}
+header.header_sticky{
+    background-color: #7E50FF;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 999;
+}
+
+header nav{
+    padding: 0 16px;
+}
+
+header nav .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav .navbar_logo img{
+    height: 40px;
+
+}
+header nav ul.navbar_menu{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 60px;
+}
+header nav ul.navbar_menu button{
+    background: transparent;
+    border:0;
+}
+header nav ul.navbar_menu > li > a, header nav ul.navbar_menu > li > button, header nav ul.navbar_menu > li .dropdown>button{
+    display: block;
+    line-height: 20px;
+    padding: 0px 20px;
+}
+header nav ul.navbar_menu > li > button.btn:hover, header nav ul.navbar_menu > li .dropdown>button:hover, header nav ul.navbar_menu > li .dropdown>button:active, header nav ul.navbar_menu > li .dropdown>button:focus-visible, .btn:first-child:active{
+    background: transparent;
+    border-color: transparent;
+}
+header nav ul.navbar_menu > li .dropdown-toggle::after{
+    display: none;
+}
+header nav .my_money{
+    border: solid 1px #7E50FF;
+    font-size: 0.7em;
+    color: #7E50FF;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 4px 8px;
+    min-width: 100px;
+    font-weight: normal;
+}
+header nav .my_money > i{
+    margin-right: 16px;
+}
+
+
+header nav .my_profile{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+header nav .my_profile img{
+    width: 100%;
+    height: 100%;
+    display: table;
+    border-radius: 50%;
+}
+
+
+/* music_card */
+.music_card{
+    cursor: pointer;
+    background: #efefef;
+    /* border: solid 1px rgb(219, 219, 219); */
+    border-radius : 8px;
+    margin-bottom: 16px;
+    line-height: 1.26;
+    overflow: hidden;
+    padding: 16px;
+    transition: 0.4s;
+
+}
+.music_card:hover{
+    /* box-shadow: 2px 5px 10px rgba(0,0,0,0.1); */
+    transition: 0.4s;
+    background-color: #282828;
+}
+.music_card .card_header{
+    margin-bottom: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.music_card .music_album_images{
+    vertical-align: unset;
+}
+.music_card .music_album_images >img{
+    width: 100%;
+    height: auto;
+}
+.music_card .card_content{
+    width: 100%;
+}
+.music_card .card_content p{
+    margin-bottom: 8px;
+}
+.music_card .card_content p.music_card_title{
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    /* word-break: keep-all; */
+}
+.music_card .card_content .music_card_title{
+    font-weight: 600;
+    font-size : 1em;
+}
+.music_card .card_content .music_card_artist{
+    color: #a7a7a7;
+    font-size: 0.8em;
+}
+.music_card .card_content .music_card_grade{
+    color: #1ED760
+}
